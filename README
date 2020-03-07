@@ -1,0 +1,41 @@
+//Stan Mihaela-Andreea
+
+Fisiere incluse:
+atm.h
+atm.c
+main.c
+Makefile
+
+In fisierul atm.h am declarat structurile  si functiile folosite.
+In fisierul atm.c am implementat functiile. Am creat o functie pentru a calcula
+suma cifrelor si o folosesc pentru a calcula pozitia la care voi insera cardurile.
+Functia add_card: Am alocat memorie pentru card si dupa am inserat cardul la
+inceputul listei de la pozitia calculata dupa formula data.
+Functia delete_card: Am parcurs lista pana la pozitia cardului si in lista de
+la pozitia gasita am cautat cardul care trebuie sters.
+Functia show: Pentru a afisa toate cardurile am facut functia printare_lista
+care este apelata de functia show.
+Pentru a afisa un singur card am facut lista printare_card.
+Functia unblock_card: Functia cauta cardul dupa numarul cardului, dat ca parametru
+si reseteaza numarul de incercari de a introduce PIN-ul. Rezultatul operatiei 
+va fi salvat in variabila "success" pentru a fi adaugat in istoricul cardului.
+Functia insert_card: Functia insereaza un card in bancomat daca numarul 
+cardului si PIN-ul sunt corecte "inserted" va avea valoarea 1. Rezultatul va fi salvat
+tot intr-o variabila "success" data ca parametru functiei.
+Functia add_history: Functia primeste rezultatul operatiei, numarul cardului curent 
+si operatia efectuata pe acel card.
+Functia recharge: Adauga suma "sum" pe cardul "card_number". Rezultatul va fi 
+salvat in "success".
+Functia cash_withdrawal: Retrage suma "sum" de pe cardul "card_number".
+Functia balance_inquiry: Afiseaza soldul de pe card si la deconectare inserted 
+devine 0.
+Functia pin_change: Testeaza daca noul PIN-ul este valid si daca este valid
+inlocuieste vechiul PIN. 
+Functia cancel: Deconnecteaza cardul prin inserted=0
+Functia transfer_funds: Am extras de pe cardul "card_source" suma "sum" cu 
+functia cash_withdrawal si daca operatia s-a realizat cu succes am adaugat 
+suma pe cardul "card_dest" cu functia recharge. Rezultatul operatiei este 
+rezultatul operatiei de la functia recharge.
+In main.c am facut citirea din fisier si pentru fiecare operatie am construit sirul care
+se adauga in istoric.  
+
